@@ -13,7 +13,7 @@ pipeline {
         PROJECT = "lamr8-dev"
         IMAGE = "medlamin13956814/exercise"
         APP_NAME = "lamela2025"
-        APP_DEPLOYMENT = "amela2025-00001-deployment"
+        APP_DEPLOYMENT = "lamela2025-00001-deployment"
     }
 
     stages {
