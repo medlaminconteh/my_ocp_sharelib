@@ -11,7 +11,7 @@ pipeline {
         OC_TOKEN = credentials('openshift_id')  // Jenkins credentials
         OC_SERVER = "https://api.rm1.0a51.p1.openshiftapps.com:6443"
         PROJECT = "lamr8-dev"
-        IMAGE = "medlamin13956814/exercise:latest"
+        IMAGE_NAME = "medlamin13956814/exercise:latest"
         APP_NAME = "web-terminal-tooling"
         APP_DEPLOYMENT = "workspace95ad191bab5b46c3"
     }
@@ -36,7 +36,7 @@ pipeline {
                 --format template \
                 --template "@/contrib/html.tpl" \
                 -o /root/reports/trivy-report.html \
-                ${IMAGE}
+                ${IMAGE_NAME}
                 '''
             }
         }
@@ -67,7 +67,7 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 script {
-                    OpenShiftHelper.deployDeployment(this, PROJECT, IMAGE, APP_NAME, APP_DEPLOYMENT)
+                    OpenShiftHelper.deployDeployment(this, PROJECT, IMAGE_NAME, APP_NAME, APP_DEPLOYMENT)
                 }
             }
         }
