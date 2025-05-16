@@ -78,7 +78,7 @@ pipeline {
                     if (!OpenShiftHelper.checkDeployment(this, PROJECT, APP_NAME, APP_DEPLOYMENT)) {
                         error "Le déploiement a échoué !"
                     } else {
-                        echo "L'application a été déployée avec succès sur OpenShift !"
+                        echo "L'application a été déployée avec succès sur OpenShifTt !"
                     }
                 }
             }
